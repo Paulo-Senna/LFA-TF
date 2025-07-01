@@ -18,7 +18,37 @@ int main()
     }
     */
     
+  
+// CRIA FUNÇÃO                  
+pilha * cria (){
     
+    pilha *p = NULL;
+    p = (pilha *) malloc (sizeof(pilha));
+    if (p){
+        p->topo = NULL;
+        p->tamPilha = 0;
+    }
+    return p;
+}
+
+                   
+int empilha (dado *novo, pilha *p){
+    celP * helper = NULL;
+    helper =(celP*) malloc (sizeof(celP));
+    if(helper != NULL){
+        memcpy(&(helper->info),novo,sizeof(dado));
+        helper->abaixo = p->topo;
+        p->topo = helper;
+        (p->tamPilha)++;
+        return 0;
+    }
+    return 1;
+}
+
+int desempilha (){
+    
+    
+}
     
 
 
