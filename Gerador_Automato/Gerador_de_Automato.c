@@ -1,4 +1,6 @@
 #include "arquiv.h"
+#include<stdio.h>
+#include<stdlib.h>
 
 int leitura_fita (int Q[],int tamest, char E[],int qntsimb, char str[],int **delta);
 int main (){
