@@ -36,11 +36,12 @@ int topo(MultiPilha *mp, int indice) {
     return -1;
 }
 
-void moverDiscos(int n, MultiPilha *mp, int origem, int auxiliar, int destino) {
+void moverDiscos(int n, MultiPilha *mp, int origem, int auxiliar, int destino, char * str) {
     if (n == 1) {
         int valor = desempilhar(mp, origem);
         printf("D%d(%c) -> (%c)\n", valor, 'A' + origem, 'A' + destino );
         empilhar(mp, destino, valor);
+        //reco(str, origem, destino); 
         imprimirEstado(mp, n);
         return;
     }
@@ -50,12 +51,29 @@ void moverDiscos(int n, MultiPilha *mp, int origem, int auxiliar, int destino) {
     int valor = desempilhar(mp, origem);
     printf("D%d(%c) -> (%c)\n", valor, 'A' + origem, 'A' + destino);
     empilhar(mp, destino, valor);
+    //reco(str, origem, destino);
     imprimirEstado(mp, n);
 
     moverDiscos(n - 1, mp, auxiliar, origem, destino);
 
 }
-
+/*
+void reco (char * String, int orig, int dest){
+   if (orig == 0 && dest == 1){
+      strcat(String,"1");
+   }else if(orig == 0 && dest == 2){
+      strcat(String,"2");
+   }else if(orig == 1 && dest == 0){
+      strcat(String,"3");
+   }else if(orig == 1 && dest == 2){
+      strcat(String,"4");
+   }else if(orig == 2 && dest == 0){
+      strcat(String,"5");
+   }else if(orig == 2 && dest == 1){
+      strcat(String,"6");
+   }
+}    
+*/
 void imprimirEstado(MultiPilha *mp, int numDiscos) {
 
     int alturaMax = 0;
