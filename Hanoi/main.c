@@ -4,7 +4,7 @@
 int main() {
     MultiPilha mp;
     int numDiscos;
-
+    //char palavra[1000];
     printf("Digite a quantidade de discos: ");
     scanf("%d", &numDiscos);
 
@@ -17,7 +17,7 @@ int main() {
     printf("\nEstado Inicial: \n");
     imprimirEstado(&mp, numDiscos);
 
-    moverDiscos(numDiscos, &mp, 0, 1, 2);  
+    moverDiscos(numDiscos, &mp, 0, 1, 2, palavra);  
 
     return 0;
 }
