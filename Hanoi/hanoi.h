@@ -21,6 +21,6 @@ int desempilhar(MultiPilha *mp, int indice);
 int topo(MultiPilha *mp, int indice);
 void moverDiscos(int n, MultiPilha *mp, int origem, int auxiliar, int destino);
 void imprimirEstado(MultiPilha *mp, int numDiscos);
-
+void reco( char * String, int orig, int dest);
 
 #endif
