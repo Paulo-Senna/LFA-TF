@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "hanoi.h"
 
 void inicializarMultiPilha(MultiPilha *mp) {
@@ -41,23 +42,23 @@ void moverDiscos(int n, MultiPilha *mp, int origem, int auxiliar, int destino, c
         int valor = desempilhar(mp, origem);
         printf("D%d(%c) -> (%c)\n", valor, 'A' + origem, 'A' + destino );
         empilhar(mp, destino, valor);
-        //reco(str, origem, destino); 
+        reco(str, origem, destino);
         imprimirEstado(mp, n);
         return;
     }
 
-    moverDiscos(n - 1, mp, origem, destino, auxiliar);
+    moverDiscos(n - 1, mp, origem, destino, auxiliar, str);
 
     int valor = desempilhar(mp, origem);
     printf("D%d(%c) -> (%c)\n", valor, 'A' + origem, 'A' + destino);
     empilhar(mp, destino, valor);
-    //reco(str, origem, destino);
+    reco(str, origem, destino);
     imprimirEstado(mp, n);
 
-    moverDiscos(n - 1, mp, auxiliar, origem, destino);
+    moverDiscos(n - 1, mp, auxiliar, origem, destino, str);
 
 }
-/*
+
 void reco (char * String, int orig, int dest){
    if (orig == 0 && dest == 1){
       strcat(String,"1");
@@ -72,8 +73,8 @@ void reco (char * String, int orig, int dest){
    }else if(orig == 2 && dest == 1){
       strcat(String,"6");
    }
-}    
-*/
+}
+
 void imprimirEstado(MultiPilha *mp, int numDiscos) {
 
     int alturaMax = 0;
@@ -97,4 +98,3 @@ void imprimirEstado(MultiPilha *mp, int numDiscos) {
     }
     printf(" A   B   C \n");
 }
-
