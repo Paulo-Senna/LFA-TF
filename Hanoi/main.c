@@ -19,5 +19,8 @@ int main() {
 
     moverDiscos(numDiscos, &mp, 0, 1, 2, palavra);  
 
+    printf("\nMovimentos: %s", palavra);
+
+    
     return 0;
 }
